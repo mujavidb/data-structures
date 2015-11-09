@@ -184,8 +184,8 @@ In a Binary Search Tree (BST), for each node, the value of all the nodes in the 
 A balanced BST is one where all nodes to the right of the root are greater and all those to the left of the root node are smaller. The difference between the height of left and right subtrees for every node is not more than 1. Balanced BSTs have a recursive structure; as you traverse further into the structure the size of the search space halves.
 
 |Average||||Worst||||
-|Access|Search|Insertion|Deletion|Access|Search|Insertion|Deletion|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|Access|Search|Insertion|Deletion|Access|Search|Insertion|Deletion|
 |O(log(n))|O(log(n))|O(log(n))|O(log(n))|O(1)|O(n)|O(n)|O(n)|
 
 ##Binary Heaps
