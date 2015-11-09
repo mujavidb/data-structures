@@ -7,8 +7,8 @@ The following data structures are defined as linear. This is because they are co
 An array is a contiguous collection of the same data type. It is a linear collection, thus objects are stored one after the other in memory. In an array you can read the element at a specific index.
 
 |Average||||Worst||||
-|Access|Search|Insertion|Deletion|Access|Search|Insertion|Deletion|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|Access|Search|Insertion|Deletion|Access|Search|Insertion|Deletion|
 |O(1)|O(n)|O(n)|O(n)|O(1)|O(n)|O(n)|O(n)|
 
 Access - via index
@@ -21,8 +21,8 @@ Deletion - deletion at an index requires moving all other items to the right by 
 A linked list is a collection of nodes, each of which stores some data and has one or two pointers. Pointers that do not point to anything are null pointers.
 
 |Average||||Worst||||
-|Access|Search|Insertion|Deletion|Access|Search|Insertion|Deletion|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|Access|Search|Insertion|Deletion|Access|Search|Insertion|Deletion|
 |O(n)|O(n)|O(1)|O(1)|O(n)|O(n)|O(1)|O(1)|
 
 ###Singly Linked
@@ -171,7 +171,7 @@ Maximum number of _nodes at a level i_ = 2<sup>_i_</sup>.
 
 Maximum number of _nodes in a binary tree with height h_ = 2<sup>_h+1_</sup> - 1.
 
-Definitions
+###Classifications of binary trees
 
 1. Strict/Proper binary tree - in this BT each node can have either 0 or 2 children.
 2. Complete binary tree - all levels, with or without the last level, are completely filled and all nodes are as left as possible.
@@ -180,9 +180,30 @@ Definitions
 
 ##Binary Search Trees
 
+In a Binary Search Tree (BST), for each node, the value of all the nodes in the left subtree are lesser and the values of all nodes in the right subtree are greater.
 
-##Balanced Trees
-##Binary heaps
+A balanced BST is one where all nodes to the right of the root are greater and all those to the left of the root node are smaller. The difference between the height of left and right subtrees for every node is not more than 1. Balanced BSTs have a recursive structure; as you traverse further into the structure the size of the search space halves.
+
+|Average||||Worst||||
+|Access|Search|Insertion|Deletion|Access|Search|Insertion|Deletion|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|O(log(n))|O(log(n))|O(log(n))|O(log(n))|O(1)|O(n)|O(n)|O(n)|
+
+##Binary Heaps
+
+A binary heap is a type of complete binary tree. It can be either a min heap or a max heap. In a binary heap, the root node of any tree or subtree must be the smallest value (for a min heap) or the highest value (for a max heap).
+
+Many operations can be performed on a binary heap:
+* getMin() or getMax() - It returns the root element of the Heap. Time Complexity of this operation is O(1).
+* extractMin() or extractMax() - Removes the min/max element from the heap. Time Complexity of this Operation is O(Log n) as this operation needs to maintain the heap property (by calling heapify()) after removing root.
+* insert(): Inserting a new key takes O(Logn) time. We add a new key at the end of the tree. If the new key is greater/smaller (for min/max respectively) than its parent, then we don’t need to do anything. Otherwise, we need to traverse up to fix the violated heap property.
+* delete(): Deleting a key also takes O(Logn) time. We replace the key to be deleted with minum infinite by calling decreaseKey(). After decreaseKey(), the minus infinite value must reach root, so we call extractMin() to remove key. 
+
+####Applications
+1. Priority Queue: Priority queues can be efficiently implemented using Binary Heap because it supports insert(), delete() and extractmax(), decreaseKey() operations in O(logn) time. Binomoial Heap and Fibonacci Heap are variations of Binary Heap. These variations perform union also efficiently.
+2. Heap Sort: Heap Sort uses Binary Heap to sort an array in O(nLogn) time.
+3. Graph Algorithms: The priority queues are especially used in Graph Algorithms like Dijkstra’s Shortest Path and Prim’s Minimum Spanning Tree.
+
 ##Tries
 
 ##Graphs
@@ -191,13 +212,14 @@ Definitions
 - Adjacency list
 - Adjacency matrix
 
-##References:
-Linked lists: https://en.wikipedia.org/wiki/Linked_list
-Running times: http://bigocheatsheet.com/
-Stacks and Queues: http://introcs.cs.princeton.edu/java/43stack/
-Hash tables: https://www.youtube.com/watch?v=h2d9b_nEzoA
-Seperate chaining: http://courses.csail.mit.edu/6.006/fall09/lecture_notes/lecture05.pdf
-Open addressing 1: http://courses.csail.mit.edu/6.006/fall11/lectures/lecture10.pdf
-Open addressing 2: https://www.cse.cuhk.edu.hk/irwin.king/_media/teaching/csc2100b/tu6.pdf
-Trees: https://www.youtube.com/watch?v=qH6yxkw0u78&index=25&list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P
+###References:
+* Linked lists: https://en.wikipedia.org/wiki/Linked_list
+* Running times: http://bigocheatsheet.com/
+* Stacks and Queues: http://introcs.cs.princeton.edu/java/43stack/
+* Hash tables: https://www.youtube.com/watch?v=h2d9b_nEzoA
+* Seperate chaining: http://courses.csail.mit.edu/6.006/fall09/lecture_notes/lecture05.pdf
+* Open addressing 1: http://courses.csail.mit.edu/6.006/fall11/lectures/lecture10.pdf
+* Open addressing 2: https://www.cse.cuhk.edu.hk/irwin.king/_media/teaching/csc2100b/tu6.pdf
+* Trees: https://www.youtube.com/watch?v=qH6yxkw0u78&index=25&list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P
+* Binary Heaps: http://geeksquiz.com/binary-heap/
 
