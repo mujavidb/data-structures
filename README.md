@@ -6,11 +6,7 @@ The following data structures are defined as linear. This is because they are co
 
 An array is a contiguous collection of the same data type. It is a linear collection, thus objects are stored one after the other in memory. In an array you can read the element at a specific index.
 
-<tr>
-    <td colspan="3">Average</td>
-    <td colspan="3">Worst</td>
-
-</tr>
+|Average||||Worst||||
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |Access|Search|Insertion|Deletion|Access|Search|Insertion|Deletion|
 |O(1)|O(n)|O(n)|O(n)|O(1)|O(n)|O(n)|O(n)|
@@ -189,7 +185,7 @@ A balanced BST is one where all nodes to the right of the root are greater and a
 
 |Average||||Worst||||
 |Access|Search|Insertion|Deletion|Access|Search|Insertion|Deletion|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |O(log(n))|O(log(n))|O(log(n))|O(log(n))|O(1)|O(n)|O(n)|O(n)|
 
 ##Binary Heaps
