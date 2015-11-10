@@ -213,11 +213,16 @@ Every node of trie consists of multiple branches. Each branch represents a possi
 Each trie node contains a value to demarkate whether it is a leaf node or not. Each node also contains an array of pointers to the next trie nodes.
 
 ###Trie operations
-**Insert**
+
+#####Insert
+
 Every character of an input key is inserted as an individual trie node. The character key acts as an index for the array of trie node pointers. If the input key is new or an extension of an existing key, we need to construct non-existing nodes of the key, and mark the new leaf node. This is O(L) (L is the length of the string).
-**Search**
+
+#####Search
+
 When searching we compare characters keys from our input key against trie nodes in the order they come up, terminating at leaf nodes. The search can terminate due to the end of a string or the lack of key. This is O(n).
-**Delete**
+
+#####Delete
 When deleting four differant scenarios may arise. They all have a time complexity of O(L):
 - The key may not be in the trie. This delete operation should not modify trie. 
 - The key is a unique key, so no part of the key contains another key (prefix), nor is the key a prefix of another key in the trie. In this situation we delete all the nodes for that key.
