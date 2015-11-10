@@ -203,8 +203,8 @@ Many operations can be performed on a binary heap:
 2. Heap Sort: Heap Sort uses Binary Heap to sort an array in O(nLogn) time.
 3. Graph Algorithms: The priority queues are especially used in Graph Algorithms like Dijkstra’s Shortest Path and Prim’s Minimum Spanning Tree.
 
-##Tries <small>(pronounced _tree_ as in re_trie_val)</small>
-A trie is an ordered tree data structure. Unlike a binary search tree, no node in the tree stores the key associated with that node; instead, its position in the tree defines the key with which it is associated. The keys in a trie are usually strings.
+##Tries
+A trie (pronounced _tree_ as in re_trie_val) is an ordered tree data structure. Unlike a binary search tree, no node in the tree stores the key associated with that node; instead, its position in the tree defines the key with which it is associated. The keys in a trie are usually strings.
 
 Tries are efficient structures used for their fast search performance of O(n), however, this comes at the cost of space requirements. 
 
@@ -213,14 +213,22 @@ Every node of trie consists of multiple branches. Each branch represents a possi
 Each trie node contains a value to demarkate whether it is a leaf node or not. Each node also contains an array of pointers to the next trie nodes.
 
 ###Trie operations
-* **Insert** - Every character of an input key is inserted as an individual trie node. The character key acts as an index for the array of trie node pointers. If the input key is new or an extension of an existing key, we need to construct non-existing nodes of the key, and mark the new leaf node. This is O(L) (L is the length of the string).
-* **Search** - When searching we compare characters keys from our input key against trie nodes in the order they come up, terminating at leaf nodes. The search can terminate due to the end of a string or the lack of key. This is O(n).
-* **Delete** - When deleting four differant scenarios may arise. They all have a time complexity of O(L):
-    - The key may not be in the trie. This delete operation should not modify trie. 
-    - The key is a unique key, so no part of the key contains another key (prefix), nor is the key a prefix of another key in the trie. In this situation we delete all the nodes for that key.
-    - The key is a prefix key of another key in the trie. We simply unmark the leaf node. 
-    - The key is present in a trie that has atleast one other key as a prefix key. Here, we delete all nodes from the end of the key until the first leaf node of the longest prefix key.
+**Insert**
+Every character of an input key is inserted as an individual trie node. The character key acts as an index for the array of trie node pointers. If the input key is new or an extension of an existing key, we need to construct non-existing nodes of the key, and mark the new leaf node. This is O(L) (L is the length of the string).
+**Search**
+When searching we compare characters keys from our input key against trie nodes in the order they come up, terminating at leaf nodes. The search can terminate due to the end of a string or the lack of key. This is O(n).
+**Delete**
+When deleting four differant scenarios may arise. They all have a time complexity of O(L):
+- The key may not be in the trie. This delete operation should not modify trie. 
+- The key is a unique key, so no part of the key contains another key (prefix), nor is the key a prefix of another key in the trie. In this situation we delete all the nodes for that key.
+- The key is a prefix key of another key in the trie. We simply unmark the leaf node. 
+- The key is present in a trie that has atleast one other key as a prefix key. Here, we delete all nodes from the end of the key until the first leaf node of the longest prefix key.
 
+####Applications
+
+Tries are great key-value stores this makes them ideal for:
+1. Dictionaries: tries can be used to store large amounts of strings for words and prefix and leaf nodes can also have definitions added.
+2. IP Routing: the ability to contain large ranges of values with a few exceptions is particularly suited to the hierarchical organization of IP addresses
 
 ##Graphs
 
