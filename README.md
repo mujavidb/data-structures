@@ -220,7 +220,7 @@ Every character of an input key is inserted as an individual trie node. The char
 
 #####Search
 
-When searching we compare characters keys from our input key against trie nodes in the order they come up, terminating at leaf nodes. The search can terminate due to the end of a string or the lack of key. This is O(n).
+When searching we compare characters keys from our input key against trie nodes in the order they come up, terminating at leaf nodes. The search can terminate due to the end of a string or the lack of key. This is O(L).
 
 #####Delete
 When deleting four differant scenarios may arise. They all have a time complexity of O(L):
