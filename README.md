@@ -203,7 +203,24 @@ Many operations can be performed on a binary heap:
 2. Heap Sort: Heap Sort uses Binary Heap to sort an array in O(nLogn) time.
 3. Graph Algorithms: The priority queues are especially used in Graph Algorithms like Dijkstra’s Shortest Path and Prim’s Minimum Spanning Tree.
 
-##Tries
+##Tries <small>(pronounced _tree_ as in re_trie_val)</small>
+A trie is an ordered tree data structure. Unlike a binary search tree, no node in the tree stores the key associated with that node; instead, its position in the tree defines the key with which it is associated. The keys in a trie are usually strings.
+
+Tries are efficient structures used for their fast search performance of O(n), however, this comes at the cost of space requirements. 
+
+Every node of trie consists of multiple branches. Each branch represents a possible character of keys. We need to mark the last node of every key as leaf node. A trie node field value will be used to distinguish the node as leaf node (there are other uses of the value field). A simple structure to represent nodes of English alphabet can be as following,
+
+Each trie node contains a value to demarkate whether it is a leaf node or not. Each node also contains an array of pointers to the next trie nodes.
+
+###Trie operations
+* **Insert** - Every character of an input key is inserted as an individual trie node. The character key acts as an index for the array of trie node pointers. If the input key is new or an extension of an existing key, we need to construct non-existing nodes of the key, and mark the new leaf node. This is O(L) (L is the length of the string).
+* **Search** - When searching we compare characters keys from our input key against trie nodes in the order they come up, terminating at leaf nodes. The search can terminate due to the end of a string or the lack of key. This is O(n).
+* **Delete** - When deleting four differant scenarios may arise. They all have a time complexity of O(L):
+    - The key may not be in the trie. This delete operation should not modify trie. 
+    - The key is a unique key, so no part of the key contains another key (prefix), nor is the key a prefix of another key in the trie. In this situation we delete all the nodes for that key.
+    - The key is a prefix key of another key in the trie. We simply unmark the leaf node. 
+    - The key is present in a trie that has atleast one other key as a prefix key. Here, we delete all nodes from the end of the key until the first leaf node of the longest prefix key.
+
 
 ##Graphs
 
@@ -221,4 +238,5 @@ Many operations can be performed on a binary heap:
 * Open addressing 2: https://www.cse.cuhk.edu.hk/irwin.king/_media/teaching/csc2100b/tu6.pdf
 * Trees: https://www.youtube.com/watch?v=qH6yxkw0u78&index=25&list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P
 * Binary Heaps: http://geeksquiz.com/binary-heap/
-
+* Tries: https://en.wikipedia.org/wiki/Trie
+* Tries: http://www.geeksforgeeks.org/trie-insert-and-search/
