@@ -1,3 +1,11 @@
+# Best O(nlog(n))
+# Average O(nlog(n))
+# Worst O(nlog(n))
+# 
+# How it works:
+# 1. Each list is broken down into sorted arrays of size one
+# 2. Each individual sorted array is merged together by comparing which item is greater
+
 def merge(my_list):
     if len(my_list) < 2:
         return my_list
@@ -16,8 +24,7 @@ def merge(my_list):
             i += 1
     # once loop finishes running there is one item
     # left in either p1 or p2
-    result += p1[i:]
-    result += p2[j:]
+    result += p1[i:] + p2[j:]
     return result
 
 print merge([3,4,5,7,3,4,0,7,3,4])

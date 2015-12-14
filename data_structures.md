@@ -33,12 +33,12 @@ In a singly linked list, each node contains some data and a pointer to the next 
 
 In a doubly linked list, each node contains some data, a pointer to the next node and a pointer to the previous.
 
-####Application
-In Operating Systems doubly linked lists are used to reference active processes, threads, and other dynamic objects. Some rootkits avoid detection by unlinking themselves from these lists.
-
 ###Circular Linked
 
 In a circular linked list, each node contains some data and a pointer to the next node. The last node contains a pointer to the first node.
+
+####Application
+In Operating Systems doubly linked lists are used to reference active processes, threads, and other dynamic objects. Some rootkits avoid detection by unlinking themselves from these lists.
 
 ##Arrays vs. Linked lists
 
@@ -74,8 +74,6 @@ When elements are pushed into the queue they are placed directly at the end. Whe
 2. Transferring data asynchronously between two processes (IO buffers), e.g., pipes, file IO, sockets.
 3. Interrupt handling: When programming a real-time system that can be interrupted (e.g., by a mouse click or wireless connection), it is necessary to attend to the interrupts immediately, before proceeding with the current activity.
 3. Breadth First Search.
-
-
 
 ##Hash Maps / Hash tables
 
